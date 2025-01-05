@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+   
+    <br>
+    <div>
+        {{ form.gender.label }}
+        {{ form.gender }}
+        {% if form.gender.errors %}
+            {% for error in form.gender.errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.age.label }}
+        {{ form.age }}
+        {% if form.age.errors %}
+            {% for error in form.age.errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {{ form.estimated_salary.label }}
+        {{ form.estimated_salary }}
+        {% if form.estimated_salary.errors %}
+            {% for error in form.estimated_salary.errors %}
+                <div>{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <br>
+    <div>{{ form.submit() }}</div>
+    <br>
+    <div>
+        {{ output }}
+    </div>
+    <br>
+    <div>
+        <p>Redirect to Homepage? <a href="{{ url_for('home') }}">Home</a></p>
+    </div>
+</form>
+{% endblock content %}

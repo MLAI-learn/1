@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div>
+    <h3> This is a simple prediction model based on Machine Learning </h3>
+    <p>  A logistic regression model is used to predict whether a user will purchase the product based on their age, gender and estimated salary. </p>
+    <a href="{{ url_for('predict') }}">Predict</a>
+</div>
+{% endblock content %}
