@@ -8,7 +8,7 @@ from wtforms.validators import DataRequired
 x_data=pd.read_csv('social_network_ads.csv').drop(columns='purchased')
 
 class InputForm(FlaskForm):
-    gender=SelectField('gender',choices=x_data.gender.unique().tolist(),validators=[DataRequired()])
+    gender=SelectField('Gender',choices=x_data.gender.unique().tolist(),validators=[DataRequired()])
     age=IntegerField('Age',validators=[DataRequired()])
     estimated_salary=IntegerField('Estimated Salary',validators=[DataRequired()])
     submit = SubmitField("Predict")
